@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,12 +33,14 @@ namespace TextBasedMap
         // ` = grass
         // ~ = water
         // * = trees
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("2D Arrays");
             Console.WriteLine();
 
-            DisplayMap();
+            DisplayMap(1);
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
@@ -46,13 +49,31 @@ namespace TextBasedMap
 
         static void DisplayMap()
         {
-            for (int y = 0; y < 12; y++)
+            for (int y = 0; y <= 11; y++)
             {
-                for (int x = 0; x < 30; x++)
+                for (int x = 0; x <= 29; x++)
                 {
                     Console.Write(map[y, x]);
                 }
                 Console.WriteLine();
+            }
+        }
+
+        static void DisplayMap(int scale)
+        {
+            for (int y = 0; y <= 11; y++)
+            {
+                for (int w = 0; w <= scale; w++)
+                {
+                    for (int x = 0; x <= 29; x++)
+                    {
+                        for (int z = 0; z <= scale; z++)
+                        {
+                            Console.Write(map[y, x]);
+                        }
+                    }
+                    Console.WriteLine();
+                }
             }
         }
     }
