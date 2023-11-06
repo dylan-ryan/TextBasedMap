@@ -26,6 +26,7 @@ namespace TextBasedMap
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
     };
 
+    
         // usage: map[y, x]
 
         // map legend:
@@ -40,7 +41,7 @@ namespace TextBasedMap
             Console.WriteLine("2D Arrays");
             Console.WriteLine();
 
-            DisplayMap(1);
+            DisplayMap();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
@@ -49,6 +50,9 @@ namespace TextBasedMap
 
         static void DisplayMap()
         {
+            
+
+
             for (int y = 0; y <= 11; y++)
             {
                 for (int x = 0; x <= 29; x++)
@@ -70,11 +74,13 @@ namespace TextBasedMap
                         for (int z = 0; z <= scale; z++)
                         {
                             Console.Write(map[y, x]);
+                            
                         }
                     }
                     Console.WriteLine();
                 }
             }
+
         }
     }
 }
