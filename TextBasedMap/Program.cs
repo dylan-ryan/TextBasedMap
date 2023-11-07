@@ -41,7 +41,7 @@ namespace TextBasedMap
             Console.WriteLine("2D Arrays");
             Console.WriteLine();
 
-            DisplayMap();
+            DisplayMap(2);
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
