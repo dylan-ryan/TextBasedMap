@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -54,37 +55,53 @@ namespace TextBasedMap
 
         static void DisplayMap()
         {
-            
-
-
-            for (int y = 0; y <= 13; y++)
-            {
-                for (int x = 0; x <= 31; x++)
-                {
-                    Console.Write(map[y, x]);
-                }
-                Console.WriteLine();
-            }
+            DisplayMap(0);
         }
 
         static void DisplayMap(int scale)
         {
-            for (int y = 0; y <= 11; y++)
+            int height = map.GetLength(0);
+            int width = map.GetLength(1);
+
+            Console.Write("+");
+            for (int i = 1; i <= width; i++)
+            {
+                for (int j = 0; j <= scale; j++)
+                {
+                    Console.Write("-");
+                }
+            }
+            Console.Write("+");
+            Console.WriteLine();
+
+
+            for (int y = 0; y < height; y++)
             {
                 for (int w = 0; w <= scale; w++)
                 {
-                    for (int x = 0; x <= 29; x++)
+                    Console.Write('|');
+                    for (int x = 0; x < width; x++)
                     {
                         for (int z = 0; z <= scale; z++)
                         {
                             Console.Write(map[y, x]);
                         }
                     }
-                    Console.Write(border[y,y]);
+                    Console.Write('|');
                     Console.WriteLine();
                 }
             }
 
+            Console.Write("+");
+            for (int i = 1; i <= width; i++)
+            {
+                for (int j = 0; j <= scale; j++)
+                {
+                    Console.Write("-");
+                }
+            }
+            Console.Write("+");
+            Console.WriteLine();
         }
     }
 }
