@@ -25,7 +25,11 @@ namespace TextBasedMap
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
     };
-
+       
+        static char[,] border = new char[,]
+    {
+    
+    };
     
         // usage: map[y, x]
 
@@ -53,9 +57,9 @@ namespace TextBasedMap
             
 
 
-            for (int y = 0; y <= 11; y++)
+            for (int y = 0; y <= 13; y++)
             {
-                for (int x = 0; x <= 29; x++)
+                for (int x = 0; x <= 31; x++)
                 {
                     Console.Write(map[y, x]);
                 }
@@ -74,9 +78,9 @@ namespace TextBasedMap
                         for (int z = 0; z <= scale; z++)
                         {
                             Console.Write(map[y, x]);
-                            
                         }
                     }
+                    Console.Write(border[y,y]);
                     Console.WriteLine();
                 }
             }
