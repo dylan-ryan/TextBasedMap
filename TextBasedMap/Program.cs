@@ -45,8 +45,24 @@ namespace TextBasedMap
         {
             Console.WriteLine("2D Arrays");
             Console.WriteLine();
+            Console.WriteLine("Map Legend:");
+            Console.WriteLine("^ = Mountains");
+            Console.WriteLine("' = Grass");
+            Console.WriteLine("~ = Water");
+            Console.WriteLine("* = Trees");
+            Console.WriteLine();
 
+            Console.WriteLine("This is what DisplayMap() looks like:");
+            DisplayMap();
+            Console.WriteLine("This is what DisplayMap(0) looks like:");
+            DisplayMap(0);
+            Console.WriteLine("This is what DisplayMap(1) looks like:");
+            DisplayMap(1);
+            Console.WriteLine("This is what DisplayMap(2) looks like:");
             DisplayMap(2);
+            Console.WriteLine("This is what DisplayMap(3) looks like:");
+            DisplayMap(3);
+            Console.WriteLine("Etc...");
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit...");
@@ -63,15 +79,15 @@ namespace TextBasedMap
             int height = map.GetLength(0);
             int width = map.GetLength(1);
 
-            Console.Write("+");
+            Console.Write("╔");
             for (int i = 1; i <= width; i++)
             {
                 for (int j = 0; j <= scale; j++)
                 {
-                    Console.Write("-");
+                    Console.Write("═");
                 }
             }
-            Console.Write("+");
+            Console.Write("╗");
             Console.WriteLine();
 
 
@@ -79,7 +95,8 @@ namespace TextBasedMap
             {
                 for (int w = 0; w <= scale; w++)
                 {
-                    Console.Write('|');
+
+                    Console.Write('║');
                     for (int x = 0; x < width; x++)
                     {
                         for (int z = 0; z <= scale; z++)
@@ -87,21 +104,24 @@ namespace TextBasedMap
                             Console.Write(map[y, x]);
                         }
                     }
-                    Console.Write('|');
+                    Console.Write('║');
                     Console.WriteLine();
+
                 }
             }
 
-            Console.Write("+");
+
+            Console.Write("╚");
             for (int i = 1; i <= width; i++)
             {
                 for (int j = 0; j <= scale; j++)
                 {
-                    Console.Write("-");
+                    Console.Write("═");
                 }
             }
-            Console.Write("+");
+            Console.Write("╝");
             Console.WriteLine();
+
         }
     }
 }
